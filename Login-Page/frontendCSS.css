@@ -1,0 +1,84 @@
+@font-face{
+    src:url(LEMONMILK-Light.otf);
+    font-family: customfont1;
+}
+
+@font-face{
+    src:url(LEMONMILK-Bold.otf);
+    font-family: customfont2;
+}
+
+body{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#loginbox{
+    display: block;
+    border: 3px solid lightgray;
+    position: relative;
+    width:50%;
+    height:80%;
+    min-width:500px;
+    min-height:400px;
+    border-radius: 10px;
+    background-color: aliceblue;
+    padding-block-end: 2%;
+}
+
+#greeting{
+    font-family: customfont1;
+    font-size: max(3vw,30px);
+}
+
+#loginicon{
+    width:15%;
+    background-color: rgb(92, 255, 168);
+    padding:10px;
+    border-radius: 50%;
+    min-width: 60px;
+}
+
+.textboxes{
+    font-size: max(1.5vw, 15px);
+    padding: 5px;
+    width: 40%;
+    min-width: 250px;
+    border: 2px solid black;
+    border-radius: 3px;
+    transition:0.2s;
+}
+
+.textboxes:focus {
+  border: 2px solid rgb(92, 255, 168);
+  background-color: mintcream;
+  outline:none;
+}
+
+#loginbodytext{
+    font-family: customfont1;
+}
+
+#loginbutton{
+    font-family: customfont2;
+    display: block;
+    border: 2px solid grey;
+    width:20%;
+    height: 8%;
+    font-size: max(1vw, 15px);
+    border-radius: 10px;
+    background-color: aliceblue;
+    font-family: customfont1;
+    transition:0.2s;
+}
+
+#loginbutton:hover{
+    background-color: rgb(92, 255, 168);
+    color: white;
+}
+
+#loginbutton:active{
+    background-color: rgb(81, 223, 147);;
+}
+
