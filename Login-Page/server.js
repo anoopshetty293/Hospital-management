@@ -4,9 +4,9 @@ const querystring = require("querystring");
 const filenameHTML ='frontendHTML.html';
 const filenameCSS ='frontendCSS.css';
 
-const server = http.createServer((req, res)=>{
+const server = http.createServer((req, res)=>{ //Creating a server to handle incoming requests
 
-    switch(req.url){
+    switch(req.url){ //Routing based on the URL requested by the client
 
         case "/":
             fs.readFile(filenameHTML, (err, data)=>{
