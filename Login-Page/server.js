@@ -6,6 +6,7 @@ const loginPageHTML ='frontendHTML.html';
 const loginPageCSS ='frontendCSS.css';
 const aboutPageHTML = path.join(__dirname, '..', 'About-Page (My Version)', 'aboutPage.html');
 const aboutPageCSS = path.join(__dirname, '..', 'About-Page (My Version)', 'aboutPage.css');
+const doctorImage = path.join(__dirname, '..', 'About-Page (My Version)', 'doctor.jpg');
 
 const server = http.createServer((req, res)=>{ //Creating a server to handle incoming requests
 
@@ -57,6 +58,17 @@ const server = http.createServer((req, res)=>{ //Creating a server to handle inc
 
         case "/aboutPage.css":
             fs.readFile(aboutPageCSS, (err, data)=>{
+                if(err){
+                res.end(err);
+                }
+                else{
+                res.end(data);
+                }
+            });
+        break;
+
+        case "/doctor.jpg":
+            fs.readFile(doctorImage, (err, data)=>{
                 if(err){
                 res.end(err);
                 }
