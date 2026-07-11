@@ -77,7 +77,7 @@ const server = http.createServer((req, res)=>{ //Creating a server to handle inc
                 .catch(error => { 
                     console.log(error); 
                 });
-                fs.readFile("Login-Page//aboutPage.html", (err, data)=>{
+                fs.readFile("aboutPage.html", (err, data)=>{
                 if(err){
                 res.end(err);
                 }
