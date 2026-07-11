@@ -3,6 +3,7 @@ const fs = require("fs");
 const querystring = require("querystring");
 const filenameHTML ='frontendHTML.html';
 const filenameCSS ='frontendCSS.css';
+const aboutPageHTML = '../aboutPage.html';
 
 const server = http.createServer((req, res)=>{ //Creating a server to handle incoming requests
 
@@ -76,7 +77,14 @@ const server = http.createServer((req, res)=>{ //Creating a server to handle inc
                 .catch(error => { 
                     console.log(error); 
                 });
-                res.end("Data received successfully.");
+                fs.readFile(aboutPageHTML, (err, data)=>{
+                if(err){
+                res.end(err);
+                }
+                else{
+                res.end(data);
+                }
+            });
             });
 
         break;
