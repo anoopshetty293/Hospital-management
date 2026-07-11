@@ -1,16 +1,18 @@
 const http = require("http");
 const fs = require("fs");
 const querystring = require("querystring");
-const filenameHTML ='frontendHTML.html';
-const filenameCSS ='frontendCSS.css';
-const aboutPageHTML = './About-Page (My Version)/aboutPage.html';
+const path = require("path");
+const loginPageHTML ='frontendHTML.html';
+const loginPageCSS ='frontendCSS.css';
+const aboutPageHTML = path.join(__dirname, '..', 'About-Page (My Version)', 'aboutPage.html');
+const aboutPageCSS = path.join(__dirname, '..', 'About-Page (My Version)', 'aboutPage.css');
 
 const server = http.createServer((req, res)=>{ //Creating a server to handle incoming requests
 
     switch(req.url){ //Routing based on the URL requested by the client
 
         case "/":
-            fs.readFile(filenameHTML, (err, data)=>{
+            fs.readFile(loginPageHTML, (err, data)=>{
                 if(err){
                 res.end(err);
                 }
@@ -21,7 +23,7 @@ const server = http.createServer((req, res)=>{ //Creating a server to handle inc
         break;
 
         case "/frontendCSS.css":
-            fs.readFile(filenameCSS, (err, data)=>{
+            fs.readFile(loginPageCSS, (err, data)=>{
                 if(err){
                 res.end(err);
                 }
@@ -44,6 +46,17 @@ const server = http.createServer((req, res)=>{ //Creating a server to handle inc
 
         case "/LEMONMILK-Light.otf":
             fs.readFile("LEMONMILK-Light.otf", (err, data)=>{
+                if(err){
+                res.end(err);
+                }
+                else{
+                res.end(data);
+                }
+            });
+        break;
+
+        case "/aboutPage.css":
+            fs.readFile(aboutPageCSS, (err, data)=>{
                 if(err){
                 res.end(err);
                 }
@@ -77,7 +90,7 @@ const server = http.createServer((req, res)=>{ //Creating a server to handle inc
                 .catch(error => { 
                     console.log(error); 
                 });
-                fs.readFile("aboutPage.html", (err, data)=>{
+                fs.readFile(aboutPageHTML, (err, data)=>{
                 if(err){
                 res.end(err);
                 }
