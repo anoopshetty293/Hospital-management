@@ -1,0 +1,156 @@
+@font-face {
+    font-family: "MyCustomFont";
+    src: url("../LEMONMILK-Light.otf");
+}
+
+@font-face {
+    font-family: "MyCustomFont1";
+    src: url("../LEMONMILK-Bold.otf");
+}
+
+body{
+    background-color:whitesmoke ;
+}
+
+h1{ 
+    font-family: MyCustomFont1;
+    text-align: center;
+    background-color: cornflowerblue;
+    color: whitesmoke;
+    padding: 50px;
+    font-size: 40px;
+    
+}
+
+#doctor-image{
+    border-radius: 30px;
+}
+
+
+#infotab{
+    display: grid;
+    grid-template-columns: 550px 1fr;
+    
+}
+
+#infotab div{
+    justify-content: center;
+}
+
+#doctor-info{
+    margin-right: 7px;
+    font-family: sans-serif;
+    font-size: 1em;
+    padding: 20px;
+}
+
+#headinginfo{
+    text-align: left;
+    color:orange;
+    font-family: MyCustomFont1;
+}
+
+#buttons{
+    background-color:aquamarine;
+    border-radius: 20px;
+    align-content: center;
+    display: flex;
+}
+
+
+#buttons button{
+    margin-right: 30px;
+    margin-top: 1.5vw;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: MyCustomFont;
+    font-size: max(10px, 1vw);
+    transition: 0.2s;
+    height: 50px;
+    margin-left: 40px;
+    width: 250px;
+}
+
+#buttons button:hover{
+    background-color: rgb(54, 168, 255);
+    color: white;
+}
+
+#buttons a{
+    text-decoration: none;
+    color: black;
+    font-family: MyCustomFont;
+    font-size: max(15px, 1.3vw);
+    margin-inline: 30px;
+    margin-top: 35px;
+    transition: 0.3s;
+}
+
+#buttons a:hover{
+    color: rgb(216, 255, 229);
+}
+
+#logo{
+    margin-top: 15px;
+    width: max(12%, 150px);
+    height: auto;
+    margin-bottom: 15px;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+#divider{
+    margin-top: 20px;
+    border: 2px solid rgb(172, 255, 227);
+    margin-left: 20px;
+    height: 50px;
+}
+
+#more{
+    display: none;
+    position:absolute;
+    left:97%;
+    transform:translateX(-100%);
+    margin-top: 17px;
+    background-color: white;
+    padding: 0.5%;
+    border-radius: 15%;
+    width: 40px;
+    height: auto;
+    transition: 0.2s;
+}
+
+#more:hover{
+    background-color: rgb(54, 168, 255);
+}
+
+@media screen and (max-width: 1100px){
+    #buttons :not(.special){
+        display: none;
+    }
+
+    #more{
+        display: block;
+    }
+
+    #logo{
+        margin-inline: 50%;
+        transform: translateX(-40%);
+    }
+}
+
+@media screen and (max-width: 1491px){
+    #buttons a{
+        margin-top: 23px;
+    }
+}
+
+@media screen and (max-width: 1240px){
+    #infotab{
+        grid-template-rows: 300px 1fr;
+        grid-template-columns: 1fr;
+    }   
+}
