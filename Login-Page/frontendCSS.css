@@ -1,10 +1,10 @@
 @font-face{
-    src:url(LEMONMILK-Light.otf);
+    src:url(../Miscellaneous/LEMONMILK-Light.otf);
     font-family: customfont1;
 }
 
 @font-face{
-    src:url(LEMONMILK-Bold.otf);
+    src:url(../Miscellaneous/LEMONMILK-Bold.otf);
     font-family: customfont2;
 }
 
