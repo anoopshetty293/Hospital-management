@@ -1,0 +1,26 @@
+body{
+    background-color:whitesmoke ;
+  
+    
+}
+h1{ 
+    text-align: center;
+    background-color: cornflowerblue;
+    color: whitesmoke;
+    padding: 50px;
+    font-size: 40px;
+}
+img{
+    border-radius: 30px;
+    margin-top: 50px;
+    margin-left: 70px;
+    float: left;
+
+
+}
+p{
+   
+    float:right;
+    
+}
+
