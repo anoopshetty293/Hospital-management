@@ -6,7 +6,12 @@ const loginPageHTML ='frontendHTML.html';
 const loginPageCSS ='frontendCSS.css';
 const aboutPageHTML = path.join(__dirname, '..', 'About-Page (My Version)', 'aboutPage.html');
 const aboutPageCSS = path.join(__dirname, '..', 'About-Page (My Version)', 'aboutPage.css');
-const doctorImage = path.join(__dirname, '..', 'About-Page (My Version)', 'doctor.jpg');
+const doctorImage = path.join(__dirname, '..', 'Miscellaneous', 'doctor.jpg');
+const contactUsHTML = path.join(__dirname, '..', 'Contact-Us-Page', 'Contact_Us.html');
+const contactUsCSS = path.join(__dirname, '..', 'Contact-Us-Page', 'Contact_Us.css');
+const fontBold = path.join(__dirname, '..', 'Miscellaneous', 'LEMONMILK-Bold.otf');
+const fontLight = path.join(__dirname, '..', 'Miscellaneous', 'LEMONMILK-Light.otf');
+
 
 const server = http.createServer((req, res)=>{ //Creating a server to handle incoming requests
 
@@ -34,8 +39,9 @@ const server = http.createServer((req, res)=>{ //Creating a server to handle inc
             });
         break;
 
-        case "/LEMONMILK-Bold.otf":
-            fs.readFile("LEMONMILK-Bold.otf", (err, data)=>{
+        case "/Miscellaneous/LEMONMILK-Bold.otf":
+    
+            fs.readFile(fontBold, (err, data)=>{
                 if(err){
                 res.end(err);
                 }
@@ -43,10 +49,11 @@ const server = http.createServer((req, res)=>{ //Creating a server to handle inc
                 res.end(data);
                 }
             });
+        
         break;
 
-        case "/LEMONMILK-Light.otf":
-            fs.readFile("LEMONMILK-Light.otf", (err, data)=>{
+        case "/Miscellaneous/LEMONMILK-Light.otf":
+            fs.readFile(fontLight, (err, data)=>{
                 if(err){
                 res.end(err);
                 }
@@ -67,7 +74,7 @@ const server = http.createServer((req, res)=>{ //Creating a server to handle inc
             });
         break;
 
-        case "/doctor.jpg":
+        case "/Miscellaneous/doctor.jpg":
             fs.readFile(doctorImage, (err, data)=>{
                 if(err){
                 res.end(err);
@@ -114,9 +121,32 @@ const server = http.createServer((req, res)=>{ //Creating a server to handle inc
 
         break;
 
+        case "/contact-us":
+            fs.readFile(contactUsHTML, (err, data)=>{
+                if(err){
+                res.end(err);
+                }
+                else{
+                res.end(data);
+                }
+            });
+        break;
+
+        case "/Contact_Us.css":
+            fs.readFile(contactUsCSS, (err, data)=>{
+                if(err){
+                res.end(err);
+                }
+                else{
+                res.end(data);
+                }
+            });
+        break;
+
 
         default:
         res.end("404 Not Found.");
+        break;
     }
 
 });
