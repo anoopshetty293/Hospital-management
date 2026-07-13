@@ -69,6 +69,17 @@ const server = http.createServer((req, res)=>{ //Creating a server to handle inc
             });
         break;
 
+        case "/about":
+            fs.readFile(aboutPageHTML, (err, data)=>{
+                if(err){
+                res.end(err);
+                }
+                else{
+                res.end(data);
+                }
+            });
+        break;
+
         case "/aboutPage.css":
             fs.readFile(aboutPageCSS, (err, data)=>{
                 if(err){
