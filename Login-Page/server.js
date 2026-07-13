@@ -11,7 +11,13 @@ const contactUsHTML = path.join(__dirname, '..', 'Contact-Us-Page', 'Contact_Us.
 const contactUsCSS = path.join(__dirname, '..', 'Contact-Us-Page', 'Contact_Us.css');
 const fontBold = path.join(__dirname, '..', 'Miscellaneous', 'LEMONMILK-Bold.otf');
 const fontLight = path.join(__dirname, '..', 'Miscellaneous', 'LEMONMILK-Light.otf');
-
+const ourDoctorsHTML = path.join(__dirname, '..', 'Our-Doctors', 'Our_Doctors.html');
+const ourDoctorsCSS = path.join(__dirname, '..', 'Our-Doctors', 'Our_Doctors.css');
+const onejpg = path.join(__dirname, '..', 'Miscellaneous', '1.JPG');
+const threejpg = path.join(__dirname, '..', 'Miscellaneous', '3.jpg');
+const fourjpg = path.join(__dirname, '..', 'Miscellaneous', '4.jpg');
+const fivejpg = path.join(__dirname, '..', 'Miscellaneous', '5.jpg');
+const doconejpg = path.join(__dirname, '..', 'Miscellaneous', 'DOC1.jpg');
 
 const server = http.createServer((req, res)=>{ //Creating a server to handle incoming requests
 
@@ -143,6 +149,82 @@ const server = http.createServer((req, res)=>{ //Creating a server to handle inc
             });
         break;
 
+        case "/our-doctors":
+            fs.readFile(ourDoctorsHTML, (err, data)=>{
+                if(err){
+                res.end(err);
+                }
+                else{
+                res.end(data);
+                }
+            });
+        break;
+
+        case "/Our_Doctors.css":
+            fs.readFile(ourDoctorsCSS, (err, data)=>{
+                if(err){
+                res.end(err);
+                }
+                else{
+                res.end(data);
+                }
+            });
+        break;
+
+        case "/Miscellaneous/1.JPG":
+            fs.readFile(onejpg, (err, data)=>{
+                if(err){
+                res.end(err);
+                }
+                else{
+                res.end(data);
+                }
+            });
+        break;
+
+        case "/Miscellaneous/3.jpg":
+            fs.readFile(threejpg, (err, data)=>{
+                if(err){
+                res.end(err);
+                }
+                else{
+                res.end(data);
+                }
+            });
+        break;
+
+        case "/Miscellaneous/4.jpg":
+            fs.readFile(fourjpg, (err, data)=>{
+                if(err){
+                res.end(err);
+                }
+                else{
+                res.end(data);
+                }
+            });
+        break;
+
+        case "/Miscellaneous/5.jpg":
+            fs.readFile(fivejpg, (err, data)=>{
+                if(err){
+                res.end(err);
+                }
+                else{
+                res.end(data);
+                }
+            });
+        break;
+
+        case "/Miscellaneous/DOC1.jpg":
+            fs.readFile(doconejpg, (err, data)=>{
+                if(err){
+                res.end(err);
+                }
+                else{
+                res.end(data);
+                }
+            });
+        break;
 
         default:
         res.end("404 Not Found.");
